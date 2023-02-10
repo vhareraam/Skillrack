@@ -1,0 +1,45 @@
+#include<iostream>
+#include<string>
+ using namespace std;
+int main()
+{
+    int m,n,i,c=0;
+    string s;
+    cin>>n>>m>>s;
+    string a[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    if(s.length()==4)
+    {
+        s.erase(1,1);
+        stoi(s);
+        for(i=0;i<n;i++)
+        {
+            
+            a[i].erase(1,1);
+            stoi(a[i]);
+        }
+    }
+    else
+    {
+        s.erase(2,1);
+        stoi(s);
+        for(i=0;i<n;i++)
+        {
+            
+            a[i].erase(2,1);
+            stoi(a[i]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]<=s)
+        c++;
+    }
+    if(c>=m)
+    cout<<"No";
+    else
+    cout<<"Yes";
+}
